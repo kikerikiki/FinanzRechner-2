@@ -1,0 +1,257 @@
+﻿@{
+    var einnahmen = ViewBag.Einnahmen as List<LAPTemplateMVC.Models.dboSchema.Einnahme>;
+    var ausgaben = ViewBag.Ausgaben as List<LAPTemplateMVC.Models.dboSchema.Ausgabe>;
+}
+
+<style>
+    .fixed-table {
+        max-height: 500px;
+        overflow-y: scroll;
+        margin-bottom: 20px;
+    }
+
+    .fixed-bottom-btn {
+        position: fixed;
+        bottom: 60px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .container-custom {
+        max-width: 100%;
+        margin-top: 30px;
+    }
+
+    .table-wrapper {
+        overflow-x: auto;
+        width: 100%;
+    }
+
+    .table {
+        width: 100%;
+    }
+
+        .table td, .table th {
+            white-space: nowrap;
+        }
+
+            .table td.bezeichnung {
+                white-space: normal;
+                word-wrap: break-word;
+                max-width: 75px;
+            }
+
+    .action-buttons {
+        display: flex;
+        gap: 10px;
+    }
+
+    .category-badge {
+        padding: 5px;
+        border-radius: 5px;
+        color: white;
+        display: inline-block;
+    }
+
+    .full-width {
+        width: 100%;
+    }
+
+    .search-bar {
+        margin-bottom: 20px;
+    }
+</style>
+
+<div class="container-fluid container-custom">
+    <div class="row">
+        <div class="col-md-12 search-bar">
+            <input type="text" id="searchInput" class="form-control" placeholder="Bezeichnung suchen...">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Einnahmen</h2>
+            <div class="fixed-table table-wrapper full-width">
+                <table class="table table-bordered table-striped full-width">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Bezeichnung</th>
+                            <th>Betrag</th>
+                            <th>Erstellt am</th>
+                            <th>Kategorie</th>
+                            <th>Aktion</th>
+                        </tr>
+                    </thead>
+                    <tbody id="einnahmenBody">
+                        @foreach (var item in einnahmen)
+                        {
+                            <tr>
+                                <td class="bezeichnung">@item.Bezeichnung</td>
+                                <td>@item.Betrag</td>
+                                <td>@item.CrTimestamp</td>
+                                <td>
+                                    <div class="category-badge" style="background-color:@item.Kategorie.Farbe;">
+                                        @item.Kategorie.Name
+                                    </div>
+                                </td>
+                                <td class="action-buttons">
+                                    <a asp-action="EditEinnahme" asp-route-id="@item.Einnahmeid" class="btn btn-primary">Edit</a>
+                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirmDeleteEinnahmeModal" data-id="@item.Einnahmeid">Delete</button>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h2>Ausgaben</h2>
+            <div class="fixed-table table-wrapper full-width">
+                <table class="table table-bordered table-striped full-width">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Bezeichnung</th>
+                            <th>Betrag</th>
+                            <th>Erstellt am</th>
+                            <th>Kategorie</th>
+                            <th>Aktion</th>
+                        </tr>
+                    </thead>
+                    <tbody id="ausgabenBody">
+                        @foreach (var item in ausgaben)
+                        {
+                            <tr>
+                                <td class="bezeichnung">@item.Bezeichnung</td>
+                                <td>@item.Betrag</td>
+                                <td>@item.CrTimestamp</td>
+                                <td>
+                                    <div class="category-badge" style="background-color:@item.Kategorie.Farbe;">
+                                        @item.Kategorie.Name
+                                    </div>
+                                </td>
+                                <td class="action-buttons">
+                                    <a asp-action="EditAusgabe" asp-route-id="@item.Ausgabeid" class="btn btn-primary">Edit</a>
+                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirmDeleteAusgabeModal" data-id="@item.Ausgabeid">Delete</button>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap Modal für Einnahmen -->
+<div class="modal fade" id="confirmDeleteEinnahmeModal" tabindex="-1" role="dialog" aria-labelledby="confirmDeleteEinnahmeModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirmDeleteEinnahmeModalLabel">Confirm Delete</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to delete this Einnahme?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <form id="deleteEinnahmeForm" method="post" action="@Url.Action("DeleteEinnahme", "Home")">
+                    <input type="hidden" id="deleteEinnahmeId" name="id" value="" />
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap Modal für Ausgaben -->
+<div class="modal fade" id="confirmDeleteAusgabeModal" tabindex="-1" role="dialog" aria-labelledby="confirmDeleteAusgabeModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirmDeleteAusgabeModalLabel">Confirm Delete</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to delete this Ausgabe?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <form id="deleteAusgabeForm" method="post" action="@Url.Action("DeleteAusgabe", "Home")">
+                    <input type="hidden" id="deleteAusgabeId" name="id" value="" />
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="fixed-bottom-btn">
+    <a asp-action="TopEntries" class="btn btn-info btn-lg">Top Entries anzeigen</a>
+    <a asp-action="AddEntry" class="btn btn-success btn-lg">+ Hinzufügen</a>
+</div>
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript">
+        $('#confirmDeleteEinnahmeModal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget); // Button that triggered the modal
+            var id = button.data('id'); // Extract info from data-* attributes
+            var modal = $(this);
+            modal.find('#deleteEinnahmeId').val(id);
+        });
+
+        $('#confirmDeleteAusgabeModal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget); // Button that triggered the modal
+            var id = button.data('id'); // Extract info from data-* attributes
+            var modal = $(this);
+            modal.find('#deleteAusgabeId').val(id);
+        });
+
+        // AJAX search functionality
+        $(document).ready(function () {
+            $('#searchInput').on('input', function () {
+                var searchTerm = $(this).val().toLowerCase();
+                $.ajax({
+                    url: '@Url.Action("SearchEntries", "Home")',
+                    data: { term: searchTerm },
+                    success: function (result) {
+                        $('#einnahmenBody').empty();
+                        $('#ausgabenBody').empty();
+
+                        result.einnahmen.forEach(function (item) {
+                            $('#einnahmenBody').append(
+                                '<tr>' +
+                                '<td class="bezeichnung">' + item.bezeichnung + '</td>' +
+                                '<td>' + item.betrag + '</td>' +
+                                '<td>' + item.crTimestamp + '</td>' +
+                                '<td><div class="category-badge" style="background-color:' + item.kategorieFarbe + ';">' + item.kategorieName + '</div></td>' +
+                                '<td class="action-buttons"><a asp-action="EditEinnahme" asp-route-id="' + item.einnahmeid + '" class="btn btn-primary">Edit</a>' +
+                                '<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirmDeleteEinnahmeModal" data-id="' + item.einnahmeid + '">Delete</button></td>' +
+                                '</tr>'
+                            );
+                        });
+
+                        result.ausgaben.forEach(function (item) {
+                            $('#ausgabenBody').append(
+                                '<tr>' +
+                                '<td class="bezeichnung">' + item.bezeichnung + '</td>' +
+                                '<td>' + item.betrag + '</td>' +
+                                '<td>' + item.crTimestamp + '</td>' +
+                                '<td><div class="category-badge" style="background-color:' + item.kategorieFarbe + ';">' + item.kategorieName + '</div></td>' +
+                                '<td class="action-buttons"><a asp-action="EditAusgabe" asp-route-id="' + item.ausgabeid + '" class="btn btn-primary">Edit</a>' +
+                                '<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirmDeleteAusgabeModal" data-id="' + item.ausgabeid + '">Delete</button></td>' +
+                                '</tr>'
+                            );
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+}

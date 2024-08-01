@@ -1,0 +1,329 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\dev\\DaRechner\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DA3BB02A-7470-4BE7-8410-5EE006692CA0}|LAPTemplateMVC.csproj|c:\\dev\\darechner\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA3BB02A-7470-4BE7-8410-5EE006692CA0}|LAPTemplateMVC.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA3BB02A-7470-4BE7-8410-5EE006692CA0}|LAPTemplateMVC.csproj|c:\\dev\\darechner\\views\\home\\kategorieindex.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DA3BB02A-7470-4BE7-8410-5EE006692CA0}|LAPTemplateMVC.csproj|solutionrelative:views\\home\\kategorieindex.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA3BB02A-7470-4BE7-8410-5EE006692CA0}|LAPTemplateMVC.csproj|c:\\dev\\darechner\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DA3BB02A-7470-4BE7-8410-5EE006692CA0}|LAPTemplateMVC.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA3BB02A-7470-4BE7-8410-5EE006692CA0}|LAPTemplateMVC.csproj|c:\\dev\\darechner\\views\\home\\addentry.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DA3BB02A-7470-4BE7-8410-5EE006692CA0}|LAPTemplateMVC.csproj|solutionrelative:views\\home\\addentry.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA3BB02A-7470-4BE7-8410-5EE006692CA0}|LAPTemplateMVC.csproj|c:\\dev\\darechner\\views\\home\\editeinnahme.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DA3BB02A-7470-4BE7-8410-5EE006692CA0}|LAPTemplateMVC.csproj|solutionrelative:views\\home\\editeinnahme.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA3BB02A-7470-4BE7-8410-5EE006692CA0}|LAPTemplateMVC.csproj|c:\\dev\\darechner\\models\\finanzrechnercontextprocedures.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA3BB02A-7470-4BE7-8410-5EE006692CA0}|LAPTemplateMVC.csproj|solutionrelative:models\\finanzrechnercontextprocedures.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA3BB02A-7470-4BE7-8410-5EE006692CA0}|LAPTemplateMVC.csproj|c:\\dev\\darechner\\views\\home\\topentries.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DA3BB02A-7470-4BE7-8410-5EE006692CA0}|LAPTemplateMVC.csproj|solutionrelative:views\\home\\topentries.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA3BB02A-7470-4BE7-8410-5EE006692CA0}|LAPTemplateMVC.csproj|c:\\dev\\darechner\\views\\home\\editausgabe.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DA3BB02A-7470-4BE7-8410-5EE006692CA0}|LAPTemplateMVC.csproj|solutionrelative:views\\home\\editausgabe.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA3BB02A-7470-4BE7-8410-5EE006692CA0}|LAPTemplateMVC.csproj|c:\\dev\\darechner\\views\\home\\createkategorie.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DA3BB02A-7470-4BE7-8410-5EE006692CA0}|LAPTemplateMVC.csproj|solutionrelative:views\\home\\createkategorie.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA3BB02A-7470-4BE7-8410-5EE006692CA0}|LAPTemplateMVC.csproj|c:\\dev\\darechner\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA3BB02A-7470-4BE7-8410-5EE006692CA0}|LAPTemplateMVC.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA3BB02A-7470-4BE7-8410-5EE006692CA0}|LAPTemplateMVC.csproj|c:\\dev\\darechner\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{DA3BB02A-7470-4BE7-8410-5EE006692CA0}|LAPTemplateMVC.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA3BB02A-7470-4BE7-8410-5EE006692CA0}|LAPTemplateMVC.csproj|c:\\dev\\darechner\\views\\home\\editkategorie.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DA3BB02A-7470-4BE7-8410-5EE006692CA0}|LAPTemplateMVC.csproj|solutionrelative:views\\home\\editkategorie.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA3BB02A-7470-4BE7-8410-5EE006692CA0}|LAPTemplateMVC.csproj|c:\\dev\\darechner\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{DA3BB02A-7470-4BE7-8410-5EE006692CA0}|LAPTemplateMVC.csproj|solutionrelative:wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA3BB02A-7470-4BE7-8410-5EE006692CA0}|LAPTemplateMVC.csproj|c:\\dev\\darechner\\models\\dbo\\kategorie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA3BB02A-7470-4BE7-8410-5EE006692CA0}|LAPTemplateMVC.csproj|solutionrelative:models\\dbo\\kategorie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA3BB02A-7470-4BE7-8410-5EE006692CA0}|LAPTemplateMVC.csproj|c:\\dev\\darechner\\models\\dbo\\einnahmegetallresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA3BB02A-7470-4BE7-8410-5EE006692CA0}|LAPTemplateMVC.csproj|solutionrelative:models\\dbo\\einnahmegetallresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA3BB02A-7470-4BE7-8410-5EE006692CA0}|LAPTemplateMVC.csproj|c:\\dev\\darechner\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DA3BB02A-7470-4BE7-8410-5EE006692CA0}|LAPTemplateMVC.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA3BB02A-7470-4BE7-8410-5EE006692CA0}|LAPTemplateMVC.csproj|c:\\dev\\darechner\\models\\dbo\\kategoriegetallresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA3BB02A-7470-4BE7-8410-5EE006692CA0}|LAPTemplateMVC.csproj|solutionrelative:models\\dbo\\kategoriegetallresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA3BB02A-7470-4BE7-8410-5EE006692CA0}|LAPTemplateMVC.csproj|c:\\dev\\darechner\\models\\finanzrechnercontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA3BB02A-7470-4BE7-8410-5EE006692CA0}|LAPTemplateMVC.csproj|solutionrelative:models\\finanzrechnercontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA3BB02A-7470-4BE7-8410-5EE006692CA0}|LAPTemplateMVC.csproj|c:\\dev\\darechner\\views\\home\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DA3BB02A-7470-4BE7-8410-5EE006692CA0}|LAPTemplateMVC.csproj|solutionrelative:views\\home\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "EditAusgabe.cshtml",
+              "DocumentMoniker": "C:\\dev\\DaRechner\\Views\\Home\\EditAusgabe.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\EditAusgabe.cshtml",
+              "ToolTip": "C:\\dev\\DaRechner\\Views\\Home\\EditAusgabe.cshtml",
+              "RelativeToolTip": "Views\\Home\\EditAusgabe.cshtml",
+              "ViewState": "AQIAADcAAAAAAAAAAAAowFoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-23T10:34:15.544Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\dev\\DaRechner\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\dev\\DaRechner\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAAE4AAAAAAAAAAAAAAGoAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-23T10:31:16.578Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\dev\\DaRechner\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "C:\\dev\\DaRechner\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AQIAALYAAAAAAAAAAAAAwEMAAABhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-22T13:29:18.288Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "KategorieIndex.cshtml",
+              "DocumentMoniker": "C:\\dev\\DaRechner\\Views\\Home\\KategorieIndex.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\KategorieIndex.cshtml",
+              "ToolTip": "C:\\dev\\DaRechner\\Views\\Home\\KategorieIndex.cshtml",
+              "RelativeToolTip": "Views\\Home\\KategorieIndex.cshtml",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAAADwAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-23T10:04:53.441Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AddEntry.cshtml",
+              "DocumentMoniker": "C:\\dev\\DaRechner\\Views\\Home\\AddEntry.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\AddEntry.cshtml",
+              "ToolTip": "C:\\dev\\DaRechner\\Views\\Home\\AddEntry.cshtml",
+              "RelativeToolTip": "Views\\Home\\AddEntry.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAFwAAAA+AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-23T12:39:31.209Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "EditEinnahme.cshtml",
+              "DocumentMoniker": "C:\\dev\\DaRechner\\Views\\Home\\EditEinnahme.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\EditEinnahme.cshtml",
+              "ToolTip": "C:\\dev\\DaRechner\\Views\\Home\\EditEinnahme.cshtml",
+              "RelativeToolTip": "Views\\Home\\EditEinnahme.cshtml",
+              "ViewState": "AQIAAC4AAAAAAAAAAAAowD8AAABNAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-23T10:20:42.942Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "FinanzRechnerContextProcedures.cs",
+              "DocumentMoniker": "C:\\dev\\DaRechner\\Models\\FinanzRechnerContextProcedures.cs",
+              "RelativeDocumentMoniker": "Models\\FinanzRechnerContextProcedures.cs",
+              "ToolTip": "C:\\dev\\DaRechner\\Models\\FinanzRechnerContextProcedures.cs",
+              "RelativeToolTip": "Models\\FinanzRechnerContextProcedures.cs",
+              "ViewState": "AQIAANIBAAAAAAAAAAAQwOABAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-23T16:41:14.66Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "CreateKategorie.cshtml",
+              "DocumentMoniker": "C:\\dev\\DaRechner\\Views\\Home\\CreateKategorie.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\CreateKategorie.cshtml",
+              "ToolTip": "C:\\dev\\DaRechner\\Views\\Home\\CreateKategorie.cshtml",
+              "RelativeToolTip": "Views\\Home\\CreateKategorie.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-23T09:28:11.371Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "TopEntries.cshtml",
+              "DocumentMoniker": "C:\\dev\\DaRechner\\Views\\Home\\TopEntries.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\TopEntries.cshtml",
+              "ToolTip": "C:\\dev\\DaRechner\\Views\\Home\\TopEntries.cshtml",
+              "RelativeToolTip": "Views\\Home\\TopEntries.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-24T08:36:30.289Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\dev\\DaRechner\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\dev\\DaRechner\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-07-22T13:27:57.125Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "EditKategorie.cshtml",
+              "DocumentMoniker": "C:\\dev\\DaRechner\\Views\\Home\\EditKategorie.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\EditKategorie.cshtml",
+              "ToolTip": "C:\\dev\\DaRechner\\Views\\Home\\EditKategorie.cshtml",
+              "RelativeToolTip": "Views\\Home\\EditKategorie.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-23T09:26:27.247Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\dev\\DaRechner\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\site.css",
+              "ToolTip": "C:\\dev\\DaRechner\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "wwwroot\\css\\site.css",
+              "ViewState": "AQIAABUAAAAAAAAAAAAAABYAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-07-23T13:06:14.222Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\dev\\DaRechner\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\dev\\DaRechner\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACsAAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-22T13:27:49.03Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "EinnahmeGetAllResult.cs",
+              "DocumentMoniker": "C:\\dev\\DaRechner\\Models\\dbo\\EinnahmeGetAllResult.cs",
+              "RelativeDocumentMoniker": "Models\\dbo\\EinnahmeGetAllResult.cs",
+              "ToolTip": "C:\\dev\\DaRechner\\Models\\dbo\\EinnahmeGetAllResult.cs",
+              "RelativeToolTip": "Models\\dbo\\EinnahmeGetAllResult.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-23T16:41:09.553Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Kategorie.cs",
+              "DocumentMoniker": "C:\\dev\\DaRechner\\Models\\dbo\\Kategorie.cs",
+              "RelativeDocumentMoniker": "Models\\dbo\\Kategorie.cs",
+              "ToolTip": "C:\\dev\\DaRechner\\Models\\dbo\\Kategorie.cs",
+              "RelativeToolTip": "Models\\dbo\\Kategorie.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAAAqwDIAAABAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-23T09:21:58.166Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\dev\\DaRechner\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\dev\\DaRechner\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-23T12:46:30.044Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "KategorieGetAllResult.cs",
+              "DocumentMoniker": "C:\\dev\\DaRechner\\Models\\dbo\\KategorieGetAllResult.cs",
+              "RelativeDocumentMoniker": "Models\\dbo\\KategorieGetAllResult.cs",
+              "ToolTip": "C:\\dev\\DaRechner\\Models\\dbo\\KategorieGetAllResult.cs",
+              "RelativeToolTip": "Models\\dbo\\KategorieGetAllResult.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-23T09:51:46.289Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "FinanzRechnerContext.cs",
+              "DocumentMoniker": "C:\\dev\\DaRechner\\Models\\FinanzRechnerContext.cs",
+              "RelativeDocumentMoniker": "Models\\FinanzRechnerContext.cs",
+              "ToolTip": "C:\\dev\\DaRechner\\Models\\FinanzRechnerContext.cs",
+              "RelativeToolTip": "Models\\FinanzRechnerContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-22T13:28:51.327Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\dev\\DaRechner\\Views\\Home\\Details.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Details.cshtml",
+              "ToolTip": "C:\\dev\\DaRechner\\Views\\Home\\Details.cshtml",
+              "RelativeToolTip": "Views\\Home\\Details.cshtml",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAIwCoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-23T09:29:13.942Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

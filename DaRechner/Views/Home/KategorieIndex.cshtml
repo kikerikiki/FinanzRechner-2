@@ -1,0 +1,102 @@
+﻿@model IEnumerable<LAPTemplateMVC.Models.dboSchema.KategorieGetAllResult>
+
+@{
+    ViewData["Title"] = "Kategorien Liste";
+    var kategorienList = Model.ToList();
+}
+
+<h1>Kategorien Liste</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.First().NAME)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().FARBE)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in kategorienList)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NAME)
+                </td>
+                <td>
+                    <div style="width: 50px; height: 20px; background-color:@item.FARBE;"></div>
+                </td>
+                <td>
+                    <a asp-action="EditKategorie" asp-route-id="@item.KATEGORIEID">Edit</a> |
+                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirmDeleteModal" data-id="@item.KATEGORIEID">Delete</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<p>
+    <a asp-action="CreateKategorie">Create New</a>
+</p>
+
+<!-- Bootstrap Modal -->
+<div class="modal fade" id="confirmDeleteModal" tabindex="-1" role="dialog" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirmDeleteModalLabel">Confirm Delete</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to delete this category?
+                <div class="form-group">
+                    <label for="newKategorieId">Select a new category for related Einnahmen and Ausgaben:</label>
+                    <select class="form-control" id="newKategorieId" name="newKategorieId">
+                        @foreach (var kategorie in kategorienList)
+                        {
+                            <option value="@kategorie.KATEGORIEID">@kategorie.NAME</option>
+                        }
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <form id="deleteForm" method="post" action="@Url.Action("DeleteKategorie", "Home")">
+                    <input type="hidden" id="deleteId" name="id" value="" />
+                    <input type="hidden" id="newKategorieIdHidden" name="newKategorieId" value="" />
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript">
+        $('#confirmDeleteModal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget); 
+            var id = button.data('id'); 
+            var modal = $(this);
+            modal.find('#deleteId').val(id);
+
+            var options = modal.find('#newKategorieId option');
+            options.each(function () {
+                if ($(this).val() == id) {
+                    $(this).remove();
+                }
+            });
+        });
+
+        $('#deleteForm').submit(function () {
+            var newKategorieId = $('#newKategorieId').val();
+            $('#newKategorieIdHidden').val(newKategorieId);
+        });
+    </script>
+}

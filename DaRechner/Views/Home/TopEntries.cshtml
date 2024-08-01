@@ -1,0 +1,120 @@
+﻿@{
+    ViewData["Title"] = "Top Entries";
+    var topEinnahmen = ViewBag.TopEinnahmen as List<dynamic> ?? new List<dynamic>();
+    var topAusgaben = ViewBag.TopAusgaben as List<dynamic> ?? new List<dynamic>();
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Top Entries</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .chart-container {
+            width: 45%;
+            display: inline-block;
+            vertical-align: top;
+            margin: 20px;
+        }
+
+        .chart-wrapper {
+            width: 100%;
+            height: 400px; 
+        }
+
+        .back-button {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <a asp-action="Index" class="btn btn-info btn-lg back-button">ᐊ</a>
+    <div class="container">
+
+        <div class="row">
+            <div class="chart-container">
+                <h2>Top 5 Einnahmen</h2>
+                <div class="chart-wrapper">
+                    <canvas id="einnahmenChart"></canvas>
+                </div>
+            </div>
+            <div class="chart-container">
+                <h2>Top 5 Ausgaben</h2>
+                <div class="chart-wrapper">
+                    <canvas id="ausgabenChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var einnahmenData = {
+            labels: @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(topEinnahmen.Select(e => e.BEZEICHNUNG.ToString()))),
+            datasets: [{
+                label: 'Einnahmen',
+                data: @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(topEinnahmen.Select(e => e.BETRAG))),
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)'
+                ],
+                borderWidth: 1
+            }]
+        };
+
+        var ausgabenData = {
+            labels: @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(topAusgaben.Select(a => a.BEZEICHNUNG.ToString()))),
+            datasets: [{
+                label: 'Ausgaben',
+                data: @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(topAusgaben.Select(a => a.BETRAG))),
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)'
+                ],
+                borderWidth: 1
+            }]
+        };
+
+        var ctxEinnahmen = document.getElementById('einnahmenChart').getContext('2d');
+        var einnahmenChart = new Chart(ctxEinnahmen, {
+            type: 'pie',
+            data: einnahmenData,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
+
+        var ctxAusgaben = document.getElementById('ausgabenChart').getContext('2d');
+        var ausgabenChart = new Chart(ctxAusgaben, {
+            type: 'pie',
+            data: ausgabenData,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
+    </script>
+</body>
+</html>
