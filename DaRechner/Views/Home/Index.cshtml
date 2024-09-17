@@ -1,79 +1,119 @@
 ﻿@{
     var einnahmen = ViewBag.Einnahmen as List<LAPTemplateMVC.Models.dboSchema.Einnahme>;
     var ausgaben = ViewBag.Ausgaben as List<LAPTemplateMVC.Models.dboSchema.Ausgabe>;
+
+    // Berechnung der Gesamtsummen
+    var totalEinnahmen = einnahmen?.Sum(e => e.Betrag) ?? 0;
+    var totalAusgaben = ausgaben?.Sum(a => a.Betrag) ?? 0;
+    var bilanz = totalEinnahmen - totalAusgaben;
 }
 
-<style>
-    .fixed-table {
-        max-height: 500px;
-        overflow-y: scroll;
-        margin-bottom: 20px;
-    }
+<!-- Google Fonts und Font Awesome für Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 
-    .fixed-bottom-btn {
-        position: fixed;
-        bottom: 60px;
-        left: 50%;
-        transform: translateX(-50%);
+<style>
+    body {
+        font-family: 'Roboto', sans-serif;
+        background-color: #f8f9fa;
+        color: #333;
     }
 
     .container-custom {
         max-width: 100%;
-        margin-top: 30px;
+        margin-top: 20px;
+    }
+
+    .search-bar input {
+        border-radius: 30px;
+        border: 1px solid #ccc;
+        padding: 10px 20px;
     }
 
     .table-wrapper {
         overflow-x: auto;
         width: 100%;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
     }
 
     .table {
         width: 100%;
+        margin-bottom: 0;
     }
 
-        .table td, .table th {
-            white-space: nowrap;
+        .table th {
+            background-color: #4a90e2;
+            color: white;
+            font-weight: 500;
         }
 
-            .table td.bezeichnung {
-                white-space: normal;
-                word-wrap: break-word;
-                max-width: 75px;
-            }
+        .table td,
+        .table th {
+            text-align: center;
+            vertical-align: middle;
+            padding: 15px;
+            border: 1px solid #dee2e6;
+        }
 
-    .action-buttons {
+  /*   .action-buttons {
         display: flex;
+        justify-content: center;
         gap: 10px;
     }
 
+            .action-buttons a:hover,
+            .action-buttons button:hover {
+                background-color: #e2e6ea;
+            } */
+
     .category-badge {
-        padding: 5px;
-        border-radius: 5px;
+        padding: 8px 12px;
+        border-radius: 15px;
         color: white;
         display: inline-block;
+        text-align: center;
     }
 
-    .full-width {
-        width: 100%;
+    .bilanz-section {
+        margin-top: 40px;
+        padding: 20px;
+        background: #f4f6f9;
+        border-radius: 10px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     }
 
-    .search-bar {
-        margin-bottom: 20px;
+    .bilanz-value {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-top: 10px;
+    }
+
+    .btn-lg {
+        border-radius: 30px;
+        padding: 10px 20px;
+        font-size: 18px;
+    }
+
+    .fixed-bottom-btn .btn {
+        margin: 10px;
     }
 </style>
 
 <div class="container-fluid container-custom">
     <div class="row">
-        <div class="col-md-12 search-bar">
+        <div class="col-md-12 search-bar mb-4">
             <input type="text" id="searchInput" class="form-control" placeholder="Bezeichnung suchen...">
         </div>
     </div>
     <div class="row">
         <div class="col-md-6">
-            <h2>Einnahmen</h2>
-            <div class="fixed-table table-wrapper full-width">
-                <table class="table table-bordered table-striped full-width">
-                    <thead class="thead-dark">
+            <h2 class="text-center mb-4">Einnahmen</h2>
+            <div class="fixed-table table-wrapper">
+                <table class="table table-bordered table-striped">
+                    <thead>
                         <tr>
                             <th>Bezeichnung</th>
                             <th>Betrag</th>
@@ -95,8 +135,12 @@
                                     </div>
                                 </td>
                                 <td class="action-buttons">
-                                    <a asp-action="EditEinnahme" asp-route-id="@item.Einnahmeid" class="btn btn-primary">Edit</a>
-                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirmDeleteEinnahmeModal" data-id="@item.Einnahmeid">Delete</button>
+                                    <a asp-action="EditEinnahme" asp-route-id="@item.Einnahmeid" class="btn btn-outline-primary">
+                                        <i class="fas fa-edit"></i> Edit
+                                    </a>
+                                    <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#confirmDeleteEinnahmeModal" data-id="@item.Einnahmeid">
+                                        <i class="fas fa-trash"></i> Delete
+                                    </button>
                                 </td>
                             </tr>
                         }
@@ -105,10 +149,10 @@
             </div>
         </div>
         <div class="col-md-6">
-            <h2>Ausgaben</h2>
-            <div class="fixed-table table-wrapper full-width">
-                <table class="table table-bordered table-striped full-width">
-                    <thead class="thead-dark">
+            <h2 class="text-center mb-4">Ausgaben</h2>
+            <div class="fixed-table table-wrapper">
+                <table class="table table-bordered table-striped">
+                    <thead>
                         <tr>
                             <th>Bezeichnung</th>
                             <th>Betrag</th>
@@ -130,14 +174,28 @@
                                     </div>
                                 </td>
                                 <td class="action-buttons">
-                                    <a asp-action="EditAusgabe" asp-route-id="@item.Ausgabeid" class="btn btn-primary">Edit</a>
-                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirmDeleteAusgabeModal" data-id="@item.Ausgabeid">Delete</button>
+                                    <a asp-action="EditAusgabe" asp-route-id="@item.Ausgabeid" class="btn btn-outline-primary">
+                                        <i class="fas fa-edit"></i> Edit
+                                    </a>
+                                    <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#confirmDeleteAusgabeModal" data-id="@item.Ausgabeid">
+                                        <i class="fas fa-trash"></i> Delete
+                                    </button>
                                 </td>
                             </tr>
                         }
                     </tbody>
                 </table>
             </div>
+        </div>
+    </div>
+
+    <!-- Bilanz-Anzeige -->
+    <div class="row bilanz-section text-center">
+        <div class="col-md-12">
+            <h3>Bilanz</h3>
+            <p class="bilanz-value" style="color: @(bilanz >= 0 ? "green" : "red");">
+                Aktuelle Bilanz: @bilanz.ToString("C")
+            </p>
         </div>
     </div>
 </div>
@@ -194,64 +252,3 @@
     <a asp-action="TopEntries" class="btn btn-info btn-lg">Top Entries anzeigen</a>
     <a asp-action="AddEntry" class="btn btn-success btn-lg">+ Hinzufügen</a>
 </div>
-
-@section Scripts {
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
-    <script type="text/javascript">
-        $('#confirmDeleteEinnahmeModal').on('show.bs.modal', function (event) {
-            var button = $(event.relatedTarget); // Button that triggered the modal
-            var id = button.data('id'); // Extract info from data-* attributes
-            var modal = $(this);
-            modal.find('#deleteEinnahmeId').val(id);
-        });
-
-        $('#confirmDeleteAusgabeModal').on('show.bs.modal', function (event) {
-            var button = $(event.relatedTarget); // Button that triggered the modal
-            var id = button.data('id'); // Extract info from data-* attributes
-            var modal = $(this);
-            modal.find('#deleteAusgabeId').val(id);
-        });
-
-        // AJAX search functionality
-        $(document).ready(function () {
-            $('#searchInput').on('input', function () {
-                var searchTerm = $(this).val().toLowerCase();
-                $.ajax({
-                    url: '@Url.Action("SearchEntries", "Home")',
-                    data: { term: searchTerm },
-                    success: function (result) {
-                        $('#einnahmenBody').empty();
-                        $('#ausgabenBody').empty();
-
-                        result.einnahmen.forEach(function (item) {
-                            $('#einnahmenBody').append(
-                                '<tr>' +
-                                '<td class="bezeichnung">' + item.bezeichnung + '</td>' +
-                                '<td>' + item.betrag + '</td>' +
-                                '<td>' + item.crTimestamp + '</td>' +
-                                '<td><div class="category-badge" style="background-color:' + item.kategorieFarbe + ';">' + item.kategorieName + '</div></td>' +
-                                '<td class="action-buttons"><a asp-action="EditEinnahme" asp-route-id="' + item.einnahmeid + '" class="btn btn-primary">Edit</a>' +
-                                '<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirmDeleteEinnahmeModal" data-id="' + item.einnahmeid + '">Delete</button></td>' +
-                                '</tr>'
-                            );
-                        });
-
-                        result.ausgaben.forEach(function (item) {
-                            $('#ausgabenBody').append(
-                                '<tr>' +
-                                '<td class="bezeichnung">' + item.bezeichnung + '</td>' +
-                                '<td>' + item.betrag + '</td>' +
-                                '<td>' + item.crTimestamp + '</td>' +
-                                '<td><div class="category-badge" style="background-color:' + item.kategorieFarbe + ';">' + item.kategorieName + '</div></td>' +
-                                '<td class="action-buttons"><a asp-action="EditAusgabe" asp-route-id="' + item.ausgabeid + '" class="btn btn-primary">Edit</a>' +
-                                '<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirmDeleteAusgabeModal" data-id="' + item.ausgabeid + '">Delete</button></td>' +
-                                '</tr>'
-                            );
-                        });
-                    }
-                });
-            });
-        });
-    </script>
-}

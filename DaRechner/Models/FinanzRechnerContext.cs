@@ -32,3 +32,4 @@ public partial class FinanzRechnerContext : DbContext
 
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 }
+

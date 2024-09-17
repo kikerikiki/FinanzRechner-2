@@ -51,4 +51,6 @@ public partial class Ausgabe
     [ForeignKey("Kategorieid")]
     [InverseProperty("Ausgabe")]
     public virtual Kategorie Kategorie { get; set; }
+
+    public string TempProperty { get; set; }
 }
